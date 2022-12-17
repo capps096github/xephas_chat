@@ -23,31 +23,46 @@ class XephasChatBubble extends StatelessWidget {
     // * sender
     final isSender = message.isSender;
 
-    // get the current message at this index
+    /// get the current message at this index
     final currentMessage = messages[index];
 
-    final nextMessage = isLastMessage ? messages[index] : messages[index + 1];
+    /// this is the message that follows the current message
+    final nextMessage = isLastMessage ? currentMessage : messages[index + 1];
 
-    //
-    final prevMessage = isFirstMessage ? messages[index] : messages[index - 1];
+    /// this is the message before the current message
+    final prevMessage = isFirstMessage ? currentMessage : messages[index - 1];
 
-    //
+    /// is a consecutive message if [isConsecutiveMessage]
+    /// 1. current message is from same sender,
+    /// 2. the previous from same sender
+    /// 3. OR the next is from same sender
     final isConsecutiveMessage = (currentMessage.isSender == isSender &&
             prevMessage.isSender == isSender) ||
         nextMessage.isSender == isSender;
 
-    // is last if current message is from same sender, the previous from same sender and the next is from another sender
+    /// is last if [isLastConsecutiveMessage]
+    /// 1. current message is from same sender,
+    /// 2. the previous from same sender
+    /// 3. AND the next is from another sender
+    /// 4. OR if this is the last message in the list OF ALL MESSAGES
     final isLastConsecutiveMessage = (currentMessage.isSender == isSender &&
                 prevMessage.isSender == isSender) &&
             nextMessage.isSender != isSender ||
         isLastMessage;
 
-    // is first if the previous message sender is different or if this is the first message in the list
+    /// is first if
+    /// 1. the previous message sender is different
+    /// 2. OR if this is the first message in the list OF ALL MESSAGES
     final isFirstConsecutiveMessage =
         (prevMessage.isSender != isSender) || isFirstMessage;
 
-    // message is alone if it is not consecutive that is the previous message sender is not the same and the next message sender is not the same or if the message is the last in the list
-    // if there is no previous message from the same sender and the next message is not from the same sender
+    /// message is alone
+    //1. if it is not consecutive 
+    //1b) that is the previous message sender is not the same
+    //1c) AND the next message sender is not the same 
+    //2. if there is no previous message from the same sender
+    //3. AND the next message is not from the same sender
+    // 4. and current message is by the sender
     final isMessageAlone = currentMessage.isSender == isSender &&
         prevMessage.isSender != isSender &&
         nextMessage.isSender != isSender;
