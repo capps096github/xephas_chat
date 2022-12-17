@@ -14,8 +14,12 @@ class ChatText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // for each character in the message replace it with a -
+    final String text = textMessage.replaceAll(RegExp(r'.'), '-');
+
+    //
     return Text(
-      textMessage,
+      text,
       style: const TextStyle(
         fontSize: 16.0,
         color: whiteColor,

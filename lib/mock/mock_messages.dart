@@ -2,67 +2,67 @@ import '../chat_exporter.dart';
 
 List<Message> messages = [
   Message(
-    sender: 'John',
+    sender: 'Cephas',
     text: 'Hey there!',
     isSender: true,
   ),
   Message(
-    sender: 'John',
+    sender: 'Cephas',
     text: 'Hey there!',
     isSender: true,
   ),
   Message(
-    sender: 'John',
+    sender: 'Cephas',
     text: 'Hi',
     isSender: true,
   ),
   Message(
-    sender: 'John',
+    sender: 'Cephas',
     text: 'Bizzzz!' * 4,
     isSender: true,
   ),
   Message(
-    sender: 'John',
+    sender: 'Cephas',
     text: 'Hey there!' * 5,
     isSender: true,
   ),
   Message(
-    sender: 'Jane',
-    text: 'Hi John, how are you?',
+    sender: 'Brian',
+    text: 'Hi Cephas, how are you?',
     isSender: false,
   ),
   Message(
-    sender: 'Jane',
+    sender: 'Brian',
     text: 'Your good?',
     isSender: false,
   ),
   Message(
-    sender: 'Jane',
+    sender: 'Brian',
     text: 'I miss you',
     isSender: false,
   ),
   Message(
-    sender: 'John',
+    sender: 'Cephas',
     text: "'I'm doing well, thanks for asking. How about you?'",
     isSender: true,
   ),
   Message(
-    sender: 'John',
+    sender: 'Cephas',
     text: "Can we meet",
     isSender: true,
   ),
   Message(
-    sender: 'Jane',
+    sender: 'Brian',
     text: "'I'm doing well too, thanks. So, what's new with you?'",
     isSender: false,
   ),
   Message(
-    sender: 'Jane',
+    sender: 'Brian',
     text: "'I'm doing well too,",
     isSender: false,
   ),
   Message(
-    sender: 'Jane',
+    sender: 'Brian',
     text: "Lol XOXO",
     isSender: false,
   ),
